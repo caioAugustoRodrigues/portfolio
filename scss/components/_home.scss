@@ -1,0 +1,87 @@
+.home{
+    height: 100%;
+    overflow: hidden;
+    align-items: center;
+    text-align: center;
+    background: 
+    linear-gradient(
+        to right,
+        rgba($primary-color, 0.9),
+        rgba($primary-color, 0.3),
+            ),
+    url('../../img/bg-1.jpg') center top;
+    background-size: cover;
+    display: grid;
+
+    .card-container {
+        position: relative;
+        display: block;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .welcome-card {
+        text-align: center;
+        position: absolute;
+        top: 35vh;
+        height: fit-content;
+        width: 360px;
+        margin-left: -180px;
+        left: 50%;
+        background: rgba($color: $primary-color, $alpha: .3);
+        border-radius: 1rem;
+        z-index: 1;
+    
+        .avatar {
+            display: block;
+            position: relative;
+            top: -6rem;
+            img {
+                display: block;
+                margin: 0 auto;
+                border-radius: 100%;
+                height: auto;
+                width: 150px;
+                border: 0.25rem solid transparent;
+            }
+        }
+    
+        &__title {
+            margin-top: -5rem;
+            .name {
+                font-size: 3rem;
+                letter-spacing: 0px;
+                font-weight: weight(bold);
+                border-bottom: 1px solid $text-color;
+                .surname {
+                    color: $secondary-color;
+                }
+            }
+    
+            p {
+                margin-top: 1rem;
+                font-size: 1.5rem;
+            }
+        }
+    
+        &__social {
+            border-radius: 0 0 1rem 1rem;
+            visibility: visible;
+            color: $text-color;
+            padding: 1rem;
+            margin-top: 1rem;
+    
+            a {
+                margin: auto 0.3rem;
+                @include transition-ease;
+    
+                &:active {
+                    color: $secondary-color;
+                }
+            }
+        }
+    }
+}
+

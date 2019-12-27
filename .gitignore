@@ -1,1 +1,10 @@
 backup tutorial/
+.gitignore
+node_modules
+public
+.firebaserc
+database.rules.json
+firebase.json
+package-lock.json
+package.json
+.vscode

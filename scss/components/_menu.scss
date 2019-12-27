@@ -1,7 +1,7 @@
 .menu-btn {
     position: absolute;
     z-index: 1;
-    right: 1rem;
+    left: 1rem;
     top: 1rem;
     height: 20px;
     width: 28px;
@@ -14,7 +14,7 @@
         top: 0.5rem;
         width: 28px;
         height: 3px;
-        background: set__text-color($primary-color);
+        background: $text-color;
         @include transition-ease;
 
         &::before {
@@ -23,7 +23,7 @@
             top: -8px;
             width: 28px;
             height: 3px;
-            background: set__text-color($primary-color);
+            background: $text-color;
             @include transition-ease;
             
         }
@@ -34,7 +34,7 @@
             top: 8px;
             width: 28px;
             height: 3px;
-            background: set__text-color($primary-color);
+            background: $text-color;
             @include transition-ease;
         }
 
@@ -42,11 +42,11 @@
             transform: rotate(720deg);
             background: transparent;
 
-            &::before{
+            &::before {
                 transform: rotate(45deg) translate(5px, 8px);
             }
 
-            &::after{
+            &::after { 
                 width: 28px;
                 transform: rotate(-45deg) translate(3px, -7px);
             }
@@ -54,22 +54,19 @@
     }
 }
 
-.nav{
+.nav {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     opacity: 0.98;
     visibility: hidden;
-    
 
-   
-
-    &.open{
+    &.open {
         visibility: visible;
     }
     
-    .menu-nav{
+    .menu-nav {
         display: flex;
         flex-flow: column wrap;
         align-items: center;
@@ -82,24 +79,25 @@
         transform: translateY(-100%);
         @include transition-ease;
 
-        &.open{
+        &.open {
             transform: translateY(0);
         }
 
-        &__item{
+        &__item {
+            margin-top: 0.5rem;
             transform: translateX(100vw);
             @include transition-ease;
 
-            &.open{
+            &.open {
                 transform: translateX(0);
             }
 
             &.active > a {
             color: $secondary-color;
-        }
+            }
         }
 
-        &__link{
+        &__link {
             display: inline-block;
             font-size: 2rem;
             text-transform: uppercase;
@@ -108,21 +106,83 @@
             font-weight: 300;
             @include transition-ease;
 
-            &:hover{
+            &:active {
+                color: $secondary-color;
+            }
+        }
+    }
+
+    .social-icons {
+        visibility: visible;
+        color: $text-color;
+        padding: 1rem;
+        transform: translateY(+500%);
+        border-top: 1px solid $secondary-color;
+        margin-top: 1rem;
+
+        &.open {
+            transform: translateY(0) !important;
+        }
+
+        a {
+            margin: auto 0.5rem;
+            @include transition-ease;
+
+            &:active {
                 color: $secondary-color;
             }
         }
     }
 }
 
-@for $i from 1 through 4 {
+@for $i from 1 through 8 {
     .menu-nav__item:nth-child(#{$i}){
         transition-delay: ($i * 0.1s) + 0.15s;
     }
 }
 
-@media only screen and (min-width: $mobile) {
+@include media-md {
+    .menu-btn {
+        visibility: hidden;
+    }
+
     .nav {
         visibility: visible;
+
+        .menu-nav {
+            display: block;
+            transform: translateY(0);
+            height: 100%;
+            padding: 1rem;
+            background: rgba($color: $primary-color, $alpha: 0.3) !important;
+
+            &__item {
+                display: inline;
+                padding-right: 1.5rem;
+            }
+
+            &__link {
+                text-align: left;
+                font-size: 1.5rem;
+
+                &:hover {
+                    color: $secondary-color;
+                }
+            }
+            
+            .social-icons {
+                border: none;
+                visibility: hidden;
+                transform: translateY(0);
+                
+                a {
+                    text-align: bottom;
+                    &:hover {
+                        color: $secondary-color;
+                    }
+                }
+            }
+
+        }
     }
 }

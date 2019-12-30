@@ -1,5 +1,9 @@
 backup tutorial/
 .gitignore
+about.html
+index2x.html
+sass.code-workspace
+portfolio
 node_modules
 public
 .firebaserc

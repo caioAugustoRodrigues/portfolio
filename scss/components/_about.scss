@@ -16,5 +16,17 @@
     p {
         font-size: 1.15rem;
         font-weight: weight(regular);
+        margin-top: 1rem;
+    }
+
+    ul {
+        text-align: left;
+
+        li {
+            margin-top: 0.25rem;
+            ul {
+                margin-left: 1rem;
+            }
+        }
     }
 }

@@ -1,0 +1,68 @@
+.projects {
+    background: $primary-color;
+    padding: 3rem;
+    text-align: center;
+    color: $text-color;
+
+    h1 {
+        font-size: 2rem;
+        font-weight: weight(bolder);
+        border-bottom: 1px solid $primary-color;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    
+    
+    .items {
+        
+        &__title {
+            h2 {
+                font-size: 1.7rem;
+                font-weight: weight(bold);
+                border-bottom: 1px solid $primary-color;
+                display: inline-block;
+                margin-top: 2rem;
+                margin-bottom: 1.2rem;
+                cursor: pointer;
+            }
+
+            .arrow {
+                font-size: 1rem;
+                margin-left: 0.5rem;
+                font-weight: weight(bold);
+                @include transition-ease;
+            }
+        }
+
+        &__canvas {
+            list-style: none;
+            max-height: 0;
+            overflow: hidden;
+            @include transition-ease;
+
+            .item {
+            
+                h3 {
+    
+                }
+    
+                .fa-github {
+    
+                }
+                
+                img {
+                    height: 360px;
+                    width: 640px;
+                }
+            }
+
+        }
+        
+        .active {
+            max-height: 1500px;
+            transition: all 0.25s ease-in;
+            @include transition-ease;
+        }  
+    }
+}

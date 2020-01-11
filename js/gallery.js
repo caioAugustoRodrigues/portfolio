@@ -1,18 +1,30 @@
-const trigger = document.querySelector('.items__title');
-const canvas = document.querySelector('.items__canvas');
-const arrow = document.querySelector('.arrow');
-let isShown = false;
+const slider = document.querySelector('.items__canvas');
+let isDown = false;
+let startX;
+let scrollLeft;
 
-function collapse() {
-    if (!isShown) {
-        canvas.classList.add('active');
-        arrow.innerHTML = '<i class="fas fa-chevron-up"></i>';
-        isShown = true;
-    } else {
-        canvas.classList.remove('active');
-        arrow.innerHTML = '<i class="fas fa-chevron-down"></i>';
-        isShown = false;
-    }
-}
+slider.addEventListener('mousedown', (e) => {
+  isDown = true;
+  slider.classList.add('active');
+  startX = e.pageX - slider.offsetLeft;
+  scrollLeft = slider.scrollLeft;
+});
 
-trigger.addEventListener('click', collapse);
+slider.addEventListener('mouseleave', () => {
+  isDown = false;
+  slider.classList.remove('active');
+});
+
+slider.addEventListener('mouseup', () => {
+  isDown = false;
+  slider.classList.remove('active');
+});
+
+slider.addEventListener('mousemove', (e)  => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - slider.offsetLeft;
+  const walk = (x - startX) * 3;
+  slider.scrollLeft = scrollLeft - walk;
+
+});

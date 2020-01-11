@@ -47,6 +47,7 @@
                     letter-spacing: 0px;
                     font-weight: weight(bold);
                     border-bottom: 1px solid $text-color;
+                    display: inline-block;
                     .surname {
                         color: $secondary-color;
                     }

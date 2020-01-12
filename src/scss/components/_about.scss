@@ -1,9 +1,13 @@
 .about {
     display: grid;
     background: $text-color;
-    padding: 3rem;
+    padding: 5rem 5rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
     text-align: center;
     color: $primary-color;
+    clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%);
+
 
     h1 {
         font-size: 2rem;

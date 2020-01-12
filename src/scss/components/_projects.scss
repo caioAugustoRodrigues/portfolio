@@ -1,30 +1,37 @@
 .projects {
     background: $primary-color;
-    padding: 3rem;
     text-align: center;
     color: $text-color;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 
+
     h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
         font-weight: weight(bolder);
         border-bottom: 1px solid $text-color;
         display: inline-block;
         padding-bottom: 0.5rem;
-        margin-bottom: 1rem;
+        margin-top: 3rem;
     }
 
     
     
     .items {
+        margin: 0 auto;
         height: 500px;
         width: 100vw;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 5rem;
+        margin-bottom: 5rem;
         
         &__title {
+            flex: 100%;
             h2 {
-                font-size: 1.7rem;
+                font-size: 2.25rem;
                 font-weight: weight(bold);
                 display: inline-block;
                 border-bottom: 1px solid $text-color;
@@ -34,46 +41,48 @@
         }
 
         &__canvas {
-            height: fit-content;
+            height: 100%;
             padding: 1rem;
             width: 70vw;
-            border: 1px solid white;
             overflow-x: scroll;
             overflow-y: hidden;
             cursor: pointer;
             transition: all 0.2s;
             transform: scale(0.98);
             background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 2%;
             display: inline-flex;
 
             .item {
-                margin: 0 1rem;
-                padding: 2rem;
+                width: 640px;
                 display: inline-flex;
                 flex-wrap: wrap;
-                flex: 1;
-                align-items: center;
-                justify-content: center;
+                justify-content: space-between;
+                gap: 1rem;
                 font-size: 2rem;
                 font-weight: 100;
                 color: $text-color;
+                margin: 1rem 2rem;
             
                 &__title {
                     display: inline-flex;
                     justify-content: space-between;
                     margin-bottom: 1rem;
+
                     h3 {
                         @include transition-ease;
                         &:hover {
-                            border-bottom: 1px solid $text-color;
+                            color: $secondary-color;
                         }
                     }
-        
-                    .git {
-                        @include transition-ease;
-                        &:hover {
-                            color: rgba($color: $primary-color, $alpha: .7);
-                        }
+                }
+
+                .git {
+                    @include transition-ease;
+
+                    &:hover {
+                        color: $secondary-color;
                     }
                 }
                 
@@ -82,13 +91,11 @@
                     width: 640px;
                 }
             }
-
         }
         
         .active {
             background: rgba(255,255,255,0.3);
             cursor: grabbing;
-            cursor: -webkit-grabbing;
             transform: scale(1);
         }  
     }

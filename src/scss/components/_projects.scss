@@ -9,7 +9,7 @@
 
 
     h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
         font-weight: weight(bolder);
         border-bottom: 1px solid $text-color;
         display: inline-block;
@@ -20,18 +20,17 @@
     
     
     .items {
-        height: 500px;
+        height: fit-content;
         width: 100vw;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        margin-top: 5rem;
-        margin-bottom: 5rem;
+        margin-top: 3rem;
         
         &__title {
             flex: 100%;
             h2 {
-                font-size: 2.25rem;
+                font-size: 1.8rem;
                 font-weight: weight(bold);
                 display: inline-block;
                 border-bottom: 1px solid $text-color;
@@ -53,38 +52,41 @@
             display: inline-flex;
 
             .item {
-                width: 640px;
-                margin: 1rem 2rem;
+                width: 560px;
+                height: fit-content;
+                margin: 1.5rem 2rem;
                 display: inline-flex;
                 flex-wrap: wrap;
                 justify-content: space-between;
-                font-size: 2rem;
+                font-size: 1.5rem;
                 font-weight: 100;
                 color: $text-color;
             
                 &__title {
-                    display: inline-flex;
-                    justify-content: space-between;
-
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin-bottom: 1.5rem;
                     h3 {
                         @include transition-ease;
                         &:hover {
                             color: $secondary-color;
                         }
                     }
-                }
-
-                .git {
-                    @include transition-ease;
-
-                    &:hover {
-                        color: $secondary-color;
+                    .git {
+                        font-size: 2rem;
+                        margin-left: 3rem;
+                        @include transition-ease;
+    
+                        &:hover {
+                            color: $secondary-color;
+                        }
                     }
                 }
+
                 
                 img {
-                    height: 320px;
-                    width: 640px;
+                    height: 280px;
+                    width: 560px;
                 }
             }
         }

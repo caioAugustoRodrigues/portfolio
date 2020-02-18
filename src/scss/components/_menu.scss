@@ -1,3 +1,7 @@
+header {
+    background: rgba($color: $primary-color, $alpha: 0.8);
+    height: 25px;
+}
 .menu-btn {
     z-index: 26;
     position: absolute;
@@ -39,7 +43,7 @@
         }
 
         &.open {
-            transform: rotate(720deg);
+            transform: rotate(90deg);
             background: transparent;
 
             &::before {
@@ -76,21 +80,16 @@
         background: $primary-color;
         list-style-type: none;
         padding-right: 1rem;
-        transform: translateY(-100%);
+        transform: translateX(-100%);
         @include transition-ease;
 
         &.open {
-            transform: translateY(0);
+            transform: translateX(0);
         }
 
         &__item {
             margin-top: 0.5rem;
-            transform: translateX(100vw);
             @include transition-ease;
-
-            &.open {
-                transform: translateX(0);
-            }
 
             &.active > a {
             color: $secondary-color;
@@ -116,13 +115,8 @@
         visibility: visible;
         color: $text-color;
         padding: 1rem;
-        transform: translateY(+800%);
         border-top: 1px solid $secondary-color;
         margin-top: 1rem;
-
-        &.open {
-            transform: translateY(0) !important;
-        }
 
         a {
             margin: auto 0.5rem;
@@ -135,46 +129,47 @@
     }
 }
 
-@for $i from 1 through 8 {
-    .menu-nav__item:nth-child(#{$i}){
-        transition-delay: ($i * 0.1s) + 0.15s;
-    }
-}
-
 @include media-md {
+    header {
+        background: none;
+    }
+
     .menu-btn {
         visibility: hidden;
     }
 
     .nav {
         visibility: visible;
+        display: block;
 
         .menu-nav {
-            display: block;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            height: 3rem;
+            padding: 1rem 3rem;
+            width: 100vw;
             transform: translateY(0);
-            height: 100%;
-            padding: 1rem;
-            margin: 1rem 3rem;
-            background: rgba($color: $primary-color, $alpha: 0.3) !important;
+            background: rgba($color: $primary-color, $alpha: 0.8) !important;
 
             &__item {
                 display: inline;
                 padding-right: 1.5rem;
+                margin: 0;
             }
 
             &__link {
                 text-align: left;
+                font-weight: weight(medium);
                 font-size: 1.5rem;
 
-                &:hover {
+                &:hover, &:active, &:focus {
                     color: $secondary-color;
                 }
             }
             
             .social-icons {
-                border: none;
-                visibility: hidden;
-                transform: translateY(0);
+                display: none;
                 
                 a {
                     text-align: bottom;

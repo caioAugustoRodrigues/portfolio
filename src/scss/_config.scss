@@ -3,18 +3,25 @@ $secondary-color: #ff652f;
 $text-color: #f3f3f3;
 $font-weight:(
     "regular": 400,
-    "medium": 500,
+    "medium": 600,
     "bold": 700,
     "bolder": 900,
 );
-$mobile: 768px;
 
 @function weight($weightname){
     @return map-get($font-weight, $weightname );
 };
 
+@mixin hover-secondary {
+    @include transition-ease;
+    
+    &:active, &:hover, &:focus {
+        color: $secondary-color;
+    }
+}
+
 @mixin transition-ease {
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 @mixin media-md {

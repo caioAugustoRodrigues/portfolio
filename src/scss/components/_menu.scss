@@ -96,6 +96,10 @@ header {
             }
         }
 
+        .name {
+            display: none;
+        }
+
         &__link {
             display: inline-block;
             font-size: 2rem;
@@ -140,22 +144,26 @@ header {
 
     .nav {
         visibility: visible;
-        display: block;
+        display: flex;
+        height: 3.5rem;
+        width: 100vw;
+        align-items: center;
+        justify-content: space-around;
+        background: rgba($color: $primary-color, $alpha: 0.8) !important;
 
         .menu-nav {
+            flex: 3;
+            background: none;
             display: flex;
-            flex-direction: row;
+            flex-flow: row;
             justify-content: flex-start;
             height: 3rem;
             padding: 1rem 3rem;
-            width: 100vw;
             transform: translateY(0);
-            background: rgba($color: $primary-color, $alpha: 0.8) !important;
 
             &__item {
-                display: inline;
-                padding-right: 1.5rem;
-                margin: 0;
+                display: flex;
+                margin: 0 .5rem;
             }
 
             &__link {
@@ -178,7 +186,53 @@ header {
                     }
                 }
             }
+        }
 
+        .name {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            padding: 0 3rem;
+            font-size: 3rem;
+            font-weight: weight(bold);
+
+            span {
+                color: $secondary-color;
+            }
+        }
+    }
+}
+
+@include media-lg {
+    .nav {
+        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-content: center;
+
+        .name {
+            justify-self: flex-start;
+            order: 1;
+            padding-right: 5rem;
+        }
+
+        .menu-nav {
+            justify-content: flex-end;
+            order: 2;
+        }
+    }
+}
+
+@include media-xl {
+    .nav {
+        .name {
+            margin-left: 2rem;
+        }
+        
+        .menu-nav {
+            &__item {
+                margin: 0 2rem;
+            }
         }
     }
 }

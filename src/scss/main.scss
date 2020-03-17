@@ -30,3 +30,19 @@ header{
     width: 100%;
     padding: 1rem; 
 }
+
+::-webkit-scrollbar {
+    width: 8px;
+    background: $text-color;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $primary-color;
+    border-radius: 4px;
+    transition: all 500ms ease-in-out;
+
+    &:hover {
+        background: $secondary-color;
+        @include transition-ease;
+    }
+}

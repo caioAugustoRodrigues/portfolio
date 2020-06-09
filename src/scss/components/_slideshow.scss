@@ -7,8 +7,6 @@
 		font-size: 2rem;
 		font-weight: weight(bold);
 		margin-bottom: 3rem;
-		padding-bottom: .5rem;
-		border-bottom: 1px solid $text-color;
 	}
 
 	.owl-carousel {
@@ -50,5 +48,22 @@
 			display: flex;
 		}
 	}
+}
+
+@include media-md {
+	.projects {
+		padding: 10rem;
+	}
+}
+
+.owl-nav {
+    button {
+        display: block;
+    }
+}
+
+.owl-dots {
+	position: absolute;
+	left: 50%;
 }
 

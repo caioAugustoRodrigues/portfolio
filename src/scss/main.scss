@@ -31,18 +31,33 @@ header{
     padding: 1rem; 
 }
 
-::-webkit-scrollbar {
-    width: 8px;
-    background: $text-color;
-}
+@include media-lg {
+    main {
+        display: flex;
+        flex-wrap: wrap;
 
-::-webkit-scrollbar-thumb {
-    background: $primary-color;
-    border-radius: 4px;
-    transition: all 500ms ease-in-out;
+        .home {
+            flex: 1 1 100%;
+            order: 1;
+        }
 
-    &:hover {
-        background: $secondary-color;
-        @include transition-ease;
+        .about {
+            flex: 2;
+            order: 3;
+            width: unset;
+            clip-path: none;
+            padding: 5rem 3rem;
+            height: unset;
+            margin: 0;
+        }
+
+        .projects {
+            flex: 4;
+            order: 2;
+            width: 100px;
+            padding: 5.5rem 3rem;
+            display: flex;
+            flex-direction: column;
+        }
     }
 }

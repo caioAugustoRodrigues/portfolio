@@ -3,10 +3,10 @@
 	padding: 5rem;
 	
 	h1 {
-		display: inline-block;
 		font-size: 2rem;
 		font-weight: weight(bold);
 		margin-bottom: 3rem;
+		border-bottom: 1px solid $text-color;
 	}
 
 	.owl-carousel {
@@ -37,10 +37,22 @@
 
 			&__tech {
 				display: flex;
-				justify-content: space-evenly;
 				align-items: center;
+				justify-content: flex-end;
 				height: 3rem;
 				font-size: 2rem;
+				position: absolute;
+				bottom: -1px;
+				right: -1px;
+				z-index: 25;
+				background: $primary-color;
+				border-radius: 1rem 0 0 0;
+				border: 1px solid $primary-color;
+				
+				svg {
+					margin: 1rem;
+					color: $text-color;
+				}
 			}
 		}
 
@@ -52,18 +64,17 @@
 
 @include media-md {
 	.projects {
-		padding: 10rem;
+		h1 {
+			margin-top: - .475rem;
+		}
 	}
 }
 
 .owl-nav {
-    button {
-        display: block;
-    }
+    display: none;
 }
 
 .owl-dots {
-	position: absolute;
-	left: 50%;
+	display: none;
 }
 

@@ -39,6 +39,7 @@ header{
         .home {
             flex: 1 1 100%;
             order: 1;
+            border-bottom: 3px solid $primary-color;
         }
 
         .about {
@@ -52,7 +53,7 @@ header{
         }
 
         .projects {
-            flex: 4;
+            flex: 3;
             order: 2;
             width: 100px;
             padding: 5.5rem 3rem;

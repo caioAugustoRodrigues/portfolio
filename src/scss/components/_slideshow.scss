@@ -1,6 +1,6 @@
 .projects {
 	text-align: center;
-	padding: 5rem;
+	padding: 1rem;
 	
 	h1 {
 		font-size: 2rem;
@@ -48,7 +48,7 @@
 				background: $primary-color;
 				border-radius: 1rem 0 0 0;
 				border: 1px solid $primary-color;
-				
+
 				svg {
 					margin: 1rem;
 					color: $text-color;
@@ -70,6 +70,11 @@
 	}
 }
 
+@include media-lg {
+	.projects {
+		padding: 5rem;
+	}
+}
 .owl-nav {
     display: none;
 }

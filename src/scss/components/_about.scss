@@ -1,5 +1,5 @@
 .about {
-    padding: 5rem 3rem;
+    padding: 5rem 1rem;
     clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%);
     background: $text-color;
     color: $primary-color;
@@ -57,10 +57,37 @@
             }
 
             ul {
+                border-left: 1px solid $primary-color;
+                padding-left: 1rem;
+
                 li {
-                    margin: .25rem 0;
+                    margin: .5rem 0;
+                    position: relative;
+
+                    .subtitle {
+                        margin-bottom: .5rem;
+                        display: inline-block;
+                        border-bottom: 1px solid $primary-color;
+
+                        &::after {
+                            content: ":";
+                        }
+                    }
+
+                    &::before {
+                        content: "";
+                        display: block;
+                        width: .5rem;
+                        height: .5rem;
+                        border-radius: 50%;
+                        background: $primary-color;
+                        position: absolute;
+                        left: -1.255rem;
+                        top: .3rem;
+                    }
 
                     ul {
+                        padding-left: .5rem;
                         li {
                             margin: .25rem .5rem;
                         }
@@ -68,6 +95,12 @@
                 }
             }
        }
+    }
+}
+
+@include media-md {
+    .about {
+        padding: 5rem 3rem;
     }
 }
 

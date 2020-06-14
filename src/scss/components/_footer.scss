@@ -3,6 +3,19 @@ footer{
     text-align: center;
     padding: 1rem;
     color: $text-color;
+    display: flex;
+
+    .language {
+        margin-right: 1rem;
+
+        &.active {
+            border-bottom: 1px solid $text-color;
+        }
+    }
+
+    .copy {
+        margin-left: auto;
+    }
 }
 
 @include media-md {
